@@ -13,21 +13,21 @@ xBtn = 307
 yBtn = 308
 
 l1Btn = 310
-l2Btn = 2
+l2Btn = 2 # event.value <= 255
 l3Btn = 317
-r1Btn = 311
+r1Btn = 311 
 r2Btn = 5
 r3Btn = 318
 
 startBtn = 315
 selectBtn = 314
 
-thumbstick1X = 0  # -32768 < event.val < 32767
+thumbstick1X = 0  # -32768 <= event.value <= 32767
 thumbstick1Y = 1
 thumbstick2X = 3
 thumbstick2Y = 4
 
-dPadX = 16  # -1 <= event.val <= 1
+dPadX = 16  # -1 <= event.value <= 1
 dPadY = 17
 
 # prints out device info at start
@@ -50,13 +50,13 @@ for event in gamepad.read_loop():
             elif event.code == l1Btn:
                 print("L1")
             elif event.code == l2Btn:
-                print("L2")
+                print("L2 %d" % event.value)
             elif event.code == l3Btn:
                 print("L3")
             elif event.code == r1Btn:
                 print("R1")
             elif event.code == r2Btn:
-                print("R2")
+                print("R2 %d" % event.value)
             elif event.code == r3Btn:
                 print("R3")
 
